@@ -1,8 +1,8 @@
-import modelos.Filme;
+import modelos.Titulo;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Filme meuFilme = new Filme("Django Livre", "2013", true, 165);
+        Titulo meuFilme = new Titulo("Django Livre", "2013", true, 165);
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia(8);
         meuFilme.avalia(10);
