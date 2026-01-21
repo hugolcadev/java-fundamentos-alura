@@ -1,8 +1,9 @@
-import modelos.Titulo;
+import calculos.FiltroRecomendacao;
+import modelos.Filme;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Titulo meuFilme = new Titulo("Django Livre", "2013", true, 165);
+        Filme meuFilme = new Filme("Django Livre", "2013", true, 165, "Tarantino");
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia(8);
         meuFilme.avalia(10);
@@ -10,5 +11,8 @@ public class Main {
         System.out.println(meuFilme.getSomaDasAvaliacoes());
         System.out.println(meuFilme.getTotalAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
+
+        FiltroRecomendacao meuFiltro = new FiltroRecomendacao();
+        meuFiltro.filtra(meuFilme);
     }
 }
