@@ -5,7 +5,7 @@ public class Audio {
     private int duracaoEmMinutos;
     private int totalReproducoes = 0;
     private int curtidas = 0;
-    protected int classificacao;
+    private int classificacao;
     
     public String getTitulo() {
         return titulo;
