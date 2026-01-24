@@ -8,12 +8,11 @@ public class Titulo {
     private int totalAvaliacoes = 0;
     private int duracaoEmMinutos;
 
-    public Titulo(String nome, String anoDeLancamento, boolean incluidoNoPlano, int duracaoEmMinutos){
+    public Titulo(String nome, String anoDeLancamento){
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
-        this.incluidoNoPlano = incluidoNoPlano;
-        this.duracaoEmMinutos = duracaoEmMinutos;
     }
+    
     //métodos getters e setters adicionados no módulo 2 do curso
     public String getNome() {
         return nome;
