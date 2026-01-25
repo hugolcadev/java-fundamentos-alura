@@ -1,5 +1,7 @@
 package main;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import calculos.FiltroRecomendacao;
 import modelos.Filme;
@@ -26,6 +28,9 @@ public class Main {
                 System.out.println("É série " + serie1.getNome());
             }
         }
-
+        Collections.sort(titulos);
+        System.out.println(titulos);
+        titulos.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println(titulos);
     }
 }

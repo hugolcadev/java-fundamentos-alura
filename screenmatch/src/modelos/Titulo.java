@@ -1,5 +1,5 @@
 package modelos;
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
     //modificadores de acesso adicionados no módulo 2 do curso
     private String nome;
     private String anoDeLancamento;
@@ -66,6 +66,11 @@ public class Titulo {
 
     public double pegaMedia(){
         return somaDasAvaliacoes/totalAvaliacoes;
+    }
+
+    @Override
+    public int compareTo(Titulo outroTitulo){
+        return this.getNome().compareTo(outroTitulo.getNome());
     }
 
 }
