@@ -1,7 +1,10 @@
 package modelos;
+
+import com.google.gson.annotations.SerializedName;
+
 public class Titulo implements Comparable<Titulo> {
     //modificadores de acesso adicionados no módulo 2 do curso
-    private String nome;
+    private String nome;    
     private String anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes = 0;
@@ -13,6 +16,11 @@ public class Titulo implements Comparable<Titulo> {
         this.anoDeLancamento = anoDeLancamento;
     }
     
+    public Titulo(TituloOmdb meuTituloOmdb){
+        this.nome = meuTituloOmdb.title();
+        this.anoDeLancamento = meuTituloOmdb.year();
+        this.duracaoEmMinutos =  Integer.parseInt(meuTituloOmdb.runtime().substring(0, 3));
+    }
     //métodos getters e setters adicionados no módulo 2 do curso
     public String getNome() {
         return nome;
@@ -71,6 +79,11 @@ public class Titulo implements Comparable<Titulo> {
     @Override
     public int compareTo(Titulo outroTitulo){
         return this.getNome().compareTo(outroTitulo.getNome());
+    }
+
+    @Override
+    public String toString(){
+        return "Nome: " + this.nome + ", Ano: " + this.anoDeLancamento + ", Duração em minutos: " + this.duracaoEmMinutos; 
     }
 
 }
