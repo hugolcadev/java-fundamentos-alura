@@ -13,7 +13,8 @@ public class Main {
         String busca = sc.nextLine();
         System.out.println("Digite o nome do autor: ");
         String autor = sc.nextLine();
-        String endereco = "https://www.googleapis.com/books/v1/volumes?q=+intitle:" + busca.replace(" ", "") + "+inauthor:" + autor.replace(" ", "") + "&key=AIzaSyDYSzEIiVWB58b2vx3PL5n9yYok9ZjLVGQ";
+        String apiKey = "SUA API KEY";
+        String endereco = "https://www.googleapis.com/books/v1/volumes?q=+intitle:" + busca.replace(" ", "+") + "+inauthor:" + autor.replace(" ", "") + "&key=" + apiKey;
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(endereco))
