@@ -12,7 +12,7 @@ public class MainComBusca {
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite um filme para busca: ");
         var busca = sc.nextLine();
-        String endereco = "http://www.omdbapi.com/?t=" + busca + "&apikey=6490763c";
+        String endereco = "http://www.omdbapi.com/?t=" + busca + "&apikey=COLOQUE_SUA_API_KEY";
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(endereco))
