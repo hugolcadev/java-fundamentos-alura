@@ -1,6 +1,7 @@
 package modelos;
 
 import com.google.gson.annotations.SerializedName;
+import excecao.ErroDeConversaoDeAnoException;
 
 public class Titulo implements Comparable<Titulo> {
     //modificadores de acesso adicionados no módulo 2 do curso
@@ -18,8 +19,11 @@ public class Titulo implements Comparable<Titulo> {
     
     public Titulo(TituloOmdb meuTituloOmdb){
         this.nome = meuTituloOmdb.title();
+        if (meuTituloOmdb.year().length()>4){
+            throw new ErroDeConversaoDeAnoException("Não consegui converter o ano porque tem mais de 4 caractéres.");
+        }
         this.anoDeLancamento = meuTituloOmdb.year();
-        this.duracaoEmMinutos =  Integer.parseInt(meuTituloOmdb.runtime().substring(0, 3));
+        this.duracaoEmMinutos =  Integer.valueOf(meuTituloOmdb.runtime().substring(0,3));
     }
     //métodos getters e setters adicionados no módulo 2 do curso
     public String getNome() {
